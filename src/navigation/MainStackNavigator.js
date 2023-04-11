@@ -4,7 +4,7 @@ import {
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {useAppSelector} from 'src/redux/hooks';
-import Login from 'src/screens/Login.js'
+import dashboard from 'src/screens/dashboard.js'
 
 const Stack = createNativeStackNavigator()
 const navigationRef = createRef()
@@ -19,7 +19,7 @@ const MainStackNavigator = () => {
   return (
       <NavigationContainer ref={navigationRef}>
         <Stack.Navigator
-          initialRouteName={"Login"}
+          initialRouteName={"dashboard"}
           screenOptions={{
               headerShown: false,
               header: ({navigation, route, options, back}) => {
@@ -35,7 +35,7 @@ const MainStackNavigator = () => {
               },
             }}
         >
-          <Stack.Screen name='Login' component={Login} />
+          <Stack.Screen name='dashboard' component={dashboard} />
         </Stack.Navigator>
       </NavigationContainer>
   )
